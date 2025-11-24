@@ -84,6 +84,8 @@ HMMER – Motif/domain scanning.
 
 seqtk – Filtering protein sequences by length.
 
+⚠️ The bash scripts assume a UNIX/Linux cluster environment with module support. Required modules: cd-hit/4.8.1, blast+/2.14.1, hmmer/3.3. On a local machine, users will need to install these tools manually.
+
 📊 Key Results – Figures & Tables
 
 motif_plot.png – Significant motif matches across representative hypothetical proteins.
