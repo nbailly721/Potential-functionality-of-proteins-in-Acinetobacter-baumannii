@@ -1,5 +1,6 @@
 ## ========================================================
-## Project: Functional Analysis of Hypothetical Proteins in *Acinetobacter baumannii*
+## Project: Functional Analysis of Hypothetical Proteins in 
+## *Acinetobacter baumannii*
 ## Description:
 ##   This script analyzes hypothetical proteins in *Acinetobacter baumannii*
 ##   by integrating protein clustering results, virulence factor annotations,
