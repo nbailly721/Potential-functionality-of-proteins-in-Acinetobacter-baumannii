@@ -4,7 +4,7 @@ This project performs an end-to-end analysis of hypothetical proteins in Acineto
 
 🖥️ Workflow Overview
 
-Data Ingestion & Preparation (R Script)
+**Data Ingestion & Preparation (R Script)**
 
 Load protein clusters (clustered_proteins.faa.clstr), virulence hits (virulence_results.tsv), and hypothetical protein sequences (hypothetical_proteins.faa).
 
@@ -14,7 +14,7 @@ Restructure protein cluster outputs into a tidy table with cluster IDs, protein 
 
 Clean and rename virulence hits for consistent merging.
 
-Virulence Factor Analysis
+**Virulence Factor Analysis**
 
 Merge representative proteins with virulence hits.
 
@@ -24,13 +24,13 @@ Summarize each protein’s virulence associations, including number of hits, uni
 
 Export summary table (virulence_summary.csv) for reporting.
 
-Motif Discovery Preparation
+**Motif Discovery Preparation**
 
 Extract representative protein sequences from the hypothetical protein dataset.
 
 Export representative_proteins.faa for HMMER hmmscan analysis.
 
-Motif Scan Analysis
+**Motif Scan Analysis**
 
 Import HMMER hmmscan_results.tbl.
 
@@ -40,7 +40,7 @@ Filter for significant motif matches (E_value < 1e-5).
 
 Arrange and visualize protein–motif associations.
 
-Visualization
+**Visualization**
 
 Plot significant motif matches across representative proteins using ggplot2.
 
@@ -48,7 +48,9 @@ E-values are represented as -log10(E_value) for standardized significance.
 
 Output visualization as motif_plot.png.
 
-📁 Datasets
+📁 Datasets 
+
+Source: NCBI RefSeq Proteome (https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/035/845/)
 
 hypothetical_proteins.faa – Filtered hypothetical protein sequences.
 
