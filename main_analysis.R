@@ -62,7 +62,8 @@ cluster_tibble <- tibble(line=cluster_protein) %>%
     str_remove(line, "^>Cluster "),
     NA_character_)) %>%
   fill(Cluster_ID)
-#Convert the data file into a tibble and create a new column "Cluster_ID" that includes the lines that start with "^>Cluster" and then remove that prefix. This code also propagate the Cluster_ID to all the sequences present in the cluster
+#Convert the data file into a tibble and create a new column "Cluster_ID" that includes the lines that start with
+#"^>Cluster" and then remove that prefix. This code also propagate the Cluster_ID to all the sequences present in the cluster
 
 cluster_final <- cluster_tibble %>%
   filter(!str_detect(line, "^>Cluster")) %>%
@@ -72,7 +73,8 @@ cluster_final <- cluster_tibble %>%
     Representative = str_detect(line, "\\*$")
   ) %>%
   select(Cluster_ID, Protein_ID, Length, Representative)
-#Modify the new data set to remove cluster headers and extract protein info: ID, length in amino acids, and representative status (*). Likewise, only keep "Cluster_ID", "Protein_ID", "Length", and "Representative" columns
+#Modify the new data set to remove cluster headers and extract protein info: ID, length in amino acids, and representative status (*). 
+#Likewise, only keep "Cluster_ID", "Protein_ID", "Length", and "Representative" columns
 
 rm (cluster_tibble)
 #Remove unnecessary pre-processed file
@@ -131,7 +133,8 @@ head(names(hypothetical_proteins))
 representative_hits <- cluster_final %>% 
   filter (Representative == TRUE) %>% 
   pull(Protein_ID)
-#Create a new data set containing only the representative proteins. Done so that the proteins used for motif analysis are also representative.
+#Create a new data set containing only the representative proteins. Done so that the proteins used for motif analysis are also
+#representative.
 
 match_cluster_protein <- hypothetical_proteins[names(hypothetical_proteins) %in% representative_hits]
 #Create a new data set that only contains the representative proteins. Done to reduce the number of redundant proteins analyzed.
@@ -155,7 +158,8 @@ motif_results <- read_fwf(
 print(motif_results)
 #Import data set from Unix environment. Headers need to be changed for further analysis.
 
-colnames(motif_results) <- c("target_name", "accession", "tlen", "query_name", "accession2", "qlen", "E_value", "score", "bias", "hmm_from", "hmm_to", "ali_from", "ali_to", "env_from", "env_to", "acc", "description"
+colnames(motif_results) <- c("target_name", "accession", "tlen", "query_name", "accession2", "qlen", "E_value", "score", 
+                             "bias", "hmm_from", "hmm_to", "ali_from", "ali_to", "env_from", "env_to", "acc", "description"
 )
 print(motif_results)
 #Headers modified to the correct values using the original file within the UNIX environment as reference.
@@ -186,6 +190,7 @@ ggplot(motif_results, aes(x = query_name, y = target_name)) +
     y = 'Type of Motif',
     title = 'Significant Motif Matches Across Hypothetical Proteins in Acinetobacter baumannii'
   )
-#Graphical representation of the type of motif associated with each sequence. The e-values were plotted as a function of log(10) for standardization purposes.
+#Graphical representation of the type of motif associated with each sequence. The e-values were plotted as a function of log(10) 
+#for standardization purposes.
 
 
