@@ -95,7 +95,6 @@ virulence_hits <- virulence_hits %>%
 head(virulence_hits,10)
 #Verification of correct format
 
-
 #_Analysis of virulence hits------------------
 
 merged_virulence_cluster <- left_join(cluster_final, virulence_hits, by='Protein_ID')
@@ -154,7 +153,7 @@ writeXStringSet(match_cluster_protein,
 
 motif_results <- read_fwf(
   "../data/hmmscan_results.tbl",
-  fwf_empty("./data/hmmscan_results.tbl"), skip = 3
+  fwf_empty("../data/hmmscan_results.tbl"), skip = 3
 )
 print(motif_results)
 #Import data set from Unix environment. Headers need to be changed for further analysis.
