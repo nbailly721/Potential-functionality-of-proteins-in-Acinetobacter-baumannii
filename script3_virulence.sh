@@ -1,3 +1,7 @@
+##======================================================================
+##This script is used to produce the "virulence_results.tsv" file
+##======================================================================
+
 #!/bin/bash
 
 #Load required  modules 
