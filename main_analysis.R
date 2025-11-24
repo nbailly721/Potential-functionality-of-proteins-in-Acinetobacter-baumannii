@@ -149,7 +149,7 @@ match_cluster_protein[1:5]
 
 writeXStringSet(match_cluster_protein, 
                 filepath = "representative_proteins.faa")
-#Export file into UNIX environment (Canada Compute-Narval Cluster) for HMMER analysis. Refer to "motifs_resilt" script for 
+#Export file into UNIX environment (Canada Compute-Narval Cluster) for HMMER analysis. Refer to "motifs_result" script for 
 #the respective Shell script
 
 motif_results <- read_fwf(
