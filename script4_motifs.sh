@@ -6,7 +6,7 @@
 
 #!/bin/bash
 
-#Load hmmscan module
+#Load required module
 module load hmmer/3.3
 
 #Set relative paths
