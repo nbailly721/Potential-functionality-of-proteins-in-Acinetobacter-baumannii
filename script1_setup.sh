@@ -1,3 +1,7 @@
+##===================================================================
+##This script is used to produce the "hypothetical_proteins.faa" file
+##===================================================================
+
 #!/bin/bash
 
 #Download proteome of Acinetobacter baumannii 
@@ -8,6 +12,6 @@ gunzip GCF_009035845.1_ASM903584v1_protein.faa.gz
 awk '/^>/{p=tolower($0) ~ /hypothetical/} p' GCF_009035845.1_ASM903584v1_protein.faa > hypothetical_proteins.faa
 
 #Filter the created file to only retain sequences longer than 50 amino acids. 
-seqtk seq -L 50 hypothetical_proteins.faa > hypothetical_proteins_filtered.faa
+seqtk seq -L 50 hypothetical_proteins.faa > hypothetical_proteins.faa
 
 
