@@ -1,3 +1,7 @@
+##======================================================================
+##This script is used to produce the "clustered_proteins.faa.clstr" file
+##======================================================================
+
 #!/bin/bash
 
 #Load required modules
