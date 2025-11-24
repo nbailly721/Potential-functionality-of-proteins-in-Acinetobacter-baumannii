@@ -1,3 +1,9 @@
+##======================================================================
+##This script is used to process the "representative_proteins.faa" 
+##imported from R Studio. It produces the "hmmscan_results.tbl" file,
+##which is again imported into R Studio.
+##======================================================================
+
 #!/bin/bash
 
 #Load hmmscan module
