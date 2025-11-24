@@ -50,7 +50,7 @@ Output visualization as motif_plot.png.
 
 📁 Datasets 
 
-Source: NCBI RefSeq Proteome (https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/035/845/)
+Source: NCBI RefSeq Proteome -(https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/035/845/GCF_009035845.1_ASM903584v1/GCF_009035845.1_ASM903584v1_protein.faa.gz)
 
 hypothetical_proteins.faa – Filtered hypothetical protein sequences.
 
