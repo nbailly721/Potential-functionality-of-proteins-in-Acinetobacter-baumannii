@@ -73,8 +73,8 @@ cluster_final <- cluster_tibble %>%
     Representative = str_detect(line, "\\*$")
   ) %>%
   select(Cluster_ID, Protein_ID, Length, Representative)
-#Modify the new data set to remove cluster headers and extract protein info: ID, length in amino acids, and representative status (*). 
-#Likewise, only keep "Cluster_ID", "Protein_ID", "Length", and "Representative" columns
+#Modify the new data set to remove cluster headers and extract protein info: ID, length in amino acids, 
+#and representative status (*). Likewise, only keep "Cluster_ID", "Protein_ID", "Length", and "Representative" columns
 
 rm (cluster_tibble)
 #Remove unnecessary pre-processed file
@@ -149,7 +149,8 @@ match_cluster_protein[1:5]
 
 writeXStringSet(match_cluster_protein, 
                 filepath = "representative_proteins.faa")
-#Export file into UNIX environment (Canada Compute-Narval Cluster) for HMMER analysis. Refer to script 4 for the respective Shell script
+#Export file into UNIX environment (Canada Compute-Narval Cluster) for HMMER analysis. Refer to "motifs_resilt" script for 
+#the respective Shell script
 
 motif_results <- read_fwf(
   "../data/hmmscan_results.tbl",
