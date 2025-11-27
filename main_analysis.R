@@ -28,7 +28,7 @@ library('readr')
 #_Load raw data -------------
 
 virulence_hits <- read_tsv('../data/virulence_results.tsv') 
-cluster_protein <-readLines('./data/clustered_proteins.faa.clstr') 
+cluster_protein <-readLines('../data/clustered_proteins.faa.clstr') 
 hypothetical_proteins <- readAAStringSet('./data/hypothetical_proteins.faa') 
 #Data sets imported from UNIX environment. 
 
