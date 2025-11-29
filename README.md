@@ -1,6 +1,6 @@
                                                       ##Functional Analysis of Hypothetical Proteins in Acinetobacter baumannii##
 
-Workflow Overview
+**Workflow Overview**
 1. Data Ingestion & Preparation (R)
 
 Load clustered proteins (clustered_proteins.faa.clstr), hypothetical proteins (hypothetical_proteins.faa), and virulence BLAST hits (virulence_results.tsv).
@@ -59,7 +59,7 @@ Use −log10(E-value) to standardize significance.
 
 Export final figure as motif_plot.png.
 
-Datasets Used (with Sources)
+**Datasets Used (with Sources)**
 Primary Dataset
 
 NCBI RefSeq Proteome for A. baumannii
@@ -75,7 +75,7 @@ virulence_results.tsv – BLASTP virulence factor hits.
 
 hmmscan_results.tbl – HMMER motif scan results from representative proteins.
 
-Packages Used
+**Packages Used**
 R Packages
 
 tidyverse – Data manipulation & visualization
@@ -100,13 +100,13 @@ seqtk – Sequence filtering
 
 Note: Bash scripts assume an HPC or Linux system with module support (cd-hit/4.8.1, blast+/2.14.1, hmmer/3.3). Local users must install tools manually.
 
-Key Results
+**Key Results**
 
 motif_plot.png – Visualization of significant motif–protein relationships across representative hypothetical proteins.
 
 virulence_summary.csv – Summary of high-identity BLASTP virulence factor hits.
 
-Files in This Repository
+**Files in This Repository**
 
 main_analysis.R – Full R workflow (ingestion → analysis → visualization)
 
@@ -122,7 +122,7 @@ motif_plot.png – Motif visualization output
 
 virulence_summary.csv – Processed virulence summary table
 
-Important Notes
+**Important Notes**
 
 The workflow is fully reproducible using provided scripts and input files.
 
@@ -130,7 +130,7 @@ Easily adaptable to other organisms or proteomes by modifying input file paths.
 
 Sequence and motif analysis steps are modular and can be reused independently.
 
-Real-World Relevance
+**Real-World Relevance**
 
 Supports functional annotation of hypothetical proteins in bacterial pathogens.
 
