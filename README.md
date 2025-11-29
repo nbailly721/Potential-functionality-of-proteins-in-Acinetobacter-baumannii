@@ -60,10 +60,8 @@ Use −log10(E-value) to standardize significance.
 Export final figure as motif_plot.png.
 
 **Datasets Used (with Sources)**
-Primary Dataset
 
-NCBI RefSeq Proteome for A. baumannii
-Source (FTP): see NCBI RefSeq FTP directory for GCF_009035845.1
+Primary Dataset: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/035/845/GCF_009035845.1_ASM903584v1/GCF_009035845.1_ASM903584v1_protein.faa.gz
 
 Processed/Generated Files
 
@@ -76,6 +74,7 @@ virulence_results.tsv – BLASTP virulence factor hits.
 hmmscan_results.tbl – HMMER motif scan results from representative proteins.
 
 **Packages Used**
+
 R Packages
 
 tidyverse – Data manipulation & visualization
