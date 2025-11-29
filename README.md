@@ -1,131 +1,141 @@
                                                       ##Functional Analysis of Hypothetical Proteins in Acinetobacter baumannii##
 
-This project performs an end-to-end analysis of hypothetical proteins in Acinetobacter baumannii, integrating protein clustering, virulence factor annotation, and motif discovery. The workflow imports raw protein sequences and clustering results, identifies high-identity virulence hits, extracts representative proteins for motif scanning, processes HMMER results, and visualizes significant motif–protein associations.
+Workflow Overview
+1. Data Ingestion & Preparation (R)
 
-🖥️ Workflow Overview
+Load clustered proteins (clustered_proteins.faa.clstr), hypothetical proteins (hypothetical_proteins.faa), and virulence BLAST hits (virulence_results.tsv).
 
-**Data Ingestion & Preparation (R Script)**
+Inspect raw sequence metadata (headers, IDs, lengths).
 
-Load protein clusters (clustered_proteins.faa.clstr), virulence hits (virulence_results.tsv), and hypothetical protein sequences (hypothetical_proteins.faa).
+Convert CD-HIT cluster output into a tidy table containing:
 
-Inspect raw datasets to verify headers, IDs, and sequence lengths.
+cluster IDs
 
-Restructure protein cluster outputs into a tidy table with cluster IDs, protein IDs, sequence lengths, and representative status.
+protein IDs
 
-Clean and rename virulence hits for consistent merging.
+sequence lengths
 
-**Virulence Factor Analysis**
+representative status
 
-Merge representative proteins with virulence hits.
+Clean and standardize virulence tables for merging.
 
-Filter for high-identity hits (Perc_Identity > 90).
+2. Virulence Factor Analysis
 
-Summarize each protein’s virulence associations, including number of hits, unique factors, and identity statistics.
+Merge representative proteins with BLASTP virulence hits.
 
-Export summary table (virulence_summary.csv) for reporting.
+Filter for high-confidence results (Perc_Identity > 90%).
 
-**Motif Discovery Preparation**
+Summarize virulence associations for each protein:
 
-Extract representative protein sequences from the hypothetical protein dataset.
+number of hits
 
-Export representative_proteins.faa for HMMER hmmscan analysis.
+unique virulence factors
 
-**Motif Scan Analysis**
+identity statistics
 
-Import HMMER hmmscan_results.tbl.
+Export summary table (virulence_summary.csv).
 
-Clean and standardize headers.
+3. Motif Discovery Preparation
 
-Filter for significant motif matches (E_value < 1e-5).
+Extract representative hypothetical protein sequences.
 
-Arrange and visualize protein–motif associations.
+Export representative_proteins.faa for HMMER hmmscan.
 
-**Visualization**
+4. Motif Scan Analysis
+
+Import hmmscan_results.tbl.
+
+Clean headers and standardize fields.
+
+Filter for significant hits (E-value < 1e-5).
+
+Organize motif–protein associations for visualization.
+
+5. Visualization
 
 Plot significant motif matches across representative proteins using ggplot2.
 
-E-values are represented as -log10(E_value) for standardized significance.
+Use −log10(E-value) to standardize significance.
 
-Output visualization as motif_plot.png.
+Export final figure as motif_plot.png.
 
-📁 Datasets 
+Datasets Used (with Sources)
+Primary Dataset
 
-Source: NCBI RefSeq Proteome -(https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/035/845/GCF_009035845.1_ASM903584v1/GCF_009035845.1_ASM903584v1_protein.faa.gz)
+NCBI RefSeq Proteome for A. baumannii
+Source (FTP): see NCBI RefSeq FTP directory for GCF_009035845.1
+
+Processed/Generated Files
 
 hypothetical_proteins.faa – Filtered hypothetical protein sequences.
 
-clustered_proteins.faa.clstr – Protein cluster output from CD-HIT.
+clustered_proteins.faa.clstr – CD-HIT protein cluster output.
 
-virulence_results.tsv – BLASTP results for virulence factor hits.
+virulence_results.tsv – BLASTP virulence factor hits.
 
-hmmscan_results.tbl – HMMER motif scan results (produced from representative proteins).
+hmmscan_results.tbl – HMMER motif scan results from representative proteins.
 
-🔧 Tools & Packages
+Packages Used
+R Packages
 
-R Packages:
+tidyverse – Data manipulation & visualization
 
-tidyverse – Data manipulation and visualization.
+Biostrings – Sequence handling
 
-Biostrings – Protein sequence handling.
+janitor – Header cleaning
 
-janitor – Header cleaning and standardization.
+readr – File import
 
-readr – Import TSV files.
+stringr – Pattern matching
 
-stringr – String extraction and pattern matching.
+Bash / Unix Tools
 
-Bash / Unix Tools:
+CD-HIT – Protein clustering
 
-CD-HIT – Protein clustering.
+BLAST+ – Virulence factor annotation
 
-BLAST+ – Virulence factor annotation.
+HMMER – Motif/domain detection
 
-HMMER – Motif/domain scanning.
+seqtk – Sequence filtering
 
-seqtk – Filtering protein sequences by length.
+Note: Bash scripts assume an HPC or Linux system with module support (cd-hit/4.8.1, blast+/2.14.1, hmmer/3.3). Local users must install tools manually.
 
-⚠️ The bash scripts assume a UNIX/Linux cluster environment with module support. Required modules: cd-hit/4.8.1, blast+/2.14.1, hmmer/3.3. On a local machine, users will need to install these tools manually.
+Key Results
 
-📊 Key Results – Figures & Tables
+motif_plot.png – Visualization of significant motif–protein relationships across representative hypothetical proteins.
 
-motif_plot.png – Significant motif matches across representative hypothetical proteins.
+virulence_summary.csv – Summary of high-identity BLASTP virulence factor hits.
 
-virulence_summary.csv – Summary table of proteins with high-identity virulence factor hits.
+Files in This Repository
 
-📂 Files in Repository
+main_analysis.R – Full R workflow (ingestion → analysis → visualization)
 
-main_analysis.R – Complete R script for data ingestion, analysis, and visualization.
+cluster_result.sh – CD-HIT clustering script
 
-cluster_result.sh – Bash script to produce clustered protein output from CD-HIT.
+hypothetical_result.sh – Script to extract/clean hypothetical protein sequences
 
-hypothetical_result.sh – Bash script to extract and filter hypothetical proteins.
+motifs_result.sh – HMMER motif scanning script
 
-motifs_result.sh – Bash script for HMMER motif scanning.
+virulence_result.sh – BLASTP virulence annotation script
 
-virulence_result.sh – Bash script to run BLASTP virulence search.
+motif_plot.png – Motif visualization output
 
-motif_plot.png – Example visualization of protein–motif associations.
+virulence_summary.csv – Processed virulence summary table
 
-virulence_summary.csv – Processed summary table of virulence hits.
+Important Notes
 
-🧠 Notes
+The workflow is fully reproducible using provided scripts and input files.
 
-This workflow demonstrates a full functional analysis pipeline for bacterial hypothetical proteins.
+Easily adaptable to other organisms or proteomes by modifying input file paths.
 
-The workflow is reproducible: raw sequences and clustering scripts are included, and outputs can be regenerated using the bash scripts and main_analysis.R.
+Sequence and motif analysis steps are modular and can be reused independently.
 
-It can be adapted to other organisms or protein datasets by updating file paths and sequence inputs.
+Real-World Relevance
 
-📌 Relevance
+Supports functional annotation of hypothetical proteins in bacterial pathogens.
 
-Provides a systematic method to identify candidate proteins with virulence potential.
+Identifies candidate proteins with virulence potential, aiding antimicrobial research.
 
-Highlights representative proteins for motif discovery, which can inform functional annotation studies.
+Provides a reproducible computational pipeline useful for comparative proteomics.
 
-Visualizes significant motif–protein relationships to support downstream experimental validation.
-
-Can be applied to other bacterial species or genomic datasets for comparative proteomics.
-
-🏛️ Alignment
-
-Supports microbial genomics research, functional annotation, and computational biology reproducibility best practices.
+Helps prioritize proteins for experimental validation in wet-lab studies.
