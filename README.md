@@ -1,5 +1,9 @@
                                                       ##Functional Analysis of Hypothetical Proteins in Acinetobacter baumannii##
 
+**Description**
+
+This project performs an end-to-end functional analysis of hypothetical proteins in Acinetobacter baumannii. It integrates protein clustering, virulence factor annotation, motif discovery using HMMER, and visualization of statistically significant motif–protein associations. The workflow processes raw protein sequences, identifies high-identity virulence hits, extracts representative proteins, analyzes motif matches, and summarizes patterns relevant to functional annotation and microbial genomics.
+
 **Workflow Overview**
 1. Data Ingestion & Preparation (R)
 
