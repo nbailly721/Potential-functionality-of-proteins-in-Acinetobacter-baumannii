@@ -63,7 +63,7 @@ Use −log10(E-value) to standardize significance.
 
 Export final figure as motif_plot.png.
 
-**Datasets Used (with Sources)**
+**Datasets Used**
 
 Primary Dataset: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/035/845/GCF_009035845.1_ASM903584v1/GCF_009035845.1_ASM903584v1_protein.faa.gz
 
