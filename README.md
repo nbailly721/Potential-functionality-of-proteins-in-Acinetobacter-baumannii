@@ -69,13 +69,13 @@ Primary Dataset: https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/009/035/845/GCF_00
 
 Processed/Generated Files
 
-hypothetical_proteins.faa – Filtered hypothetical protein sequences.
+`hypothetical_proteins.faa` – Filtered hypothetical protein sequences.
 
-clustered_proteins.faa.clstr – CD-HIT protein cluster output.
+`clustered_proteins.faa.clstr` – CD-HIT protein cluster output.
 
 `virulence_results.tsv` – BLASTP virulence factor hits.
 
-hmmscan_results.tbl – HMMER motif scan results from representative proteins.
+`hmmscan_results.tbl` – HMMER motif scan results from representative proteins.
 
 **Packages Used**
 
@@ -105,9 +105,9 @@ Note: Bash scripts assume an HPC or Linux system with module support (cd-hit/4.8
 
 **Key Results**
 
-motif_plot.png – Visualization of significant motif–protein relationships across representative hypothetical proteins.
+`motif_plot.png` – Visualization of significant motif–protein relationships across representative hypothetical proteins.
 
-virulence_summary.csv – Summary of high-identity BLASTP virulence factor hits.
+`virulence_summary.csv` – Summary of high-identity BLASTP virulence factor hits.
 
 **Files in This Repository**
 
