@@ -73,7 +73,7 @@ hypothetical_proteins.faa – Filtered hypothetical protein sequences.
 
 clustered_proteins.faa.clstr – CD-HIT protein cluster output.
 
-virulence_results.tsv – BLASTP virulence factor hits.
+`virulence_results.tsv` – BLASTP virulence factor hits.
 
 hmmscan_results.tbl – HMMER motif scan results from representative proteins.
 
