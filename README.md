@@ -111,19 +111,19 @@ virulence_summary.csv – Summary of high-identity BLASTP virulence factor hits.
 
 **Files in This Repository**
 
-main_analysis.R – Full R workflow (ingestion → analysis → visualization)
+`main_analysis.R` – Full R workflow (ingestion → analysis → visualization)
 
-cluster_result.sh – CD-HIT clustering script
+`cluster_result.sh` – CD-HIT clustering script
 
-hypothetical_result.sh – Script to extract/clean hypothetical protein sequences
+`hypothetical_result.sh` – Script to extract/clean hypothetical protein sequences
 
-motifs_result.sh – HMMER motif scanning script
+`motifs_result.sh` – HMMER motif scanning script
 
-virulence_result.sh – BLASTP virulence annotation script
+`virulence_result.sh` – BLASTP virulence annotation script
 
-motif_plot.png – Motif visualization output
+`motif_plot.png` – Motif visualization output
 
-virulence_summary.csv – Processed virulence summary table
+`virulence_summary.csv` – Processed virulence summary table
 
 **Important Notes**
 
